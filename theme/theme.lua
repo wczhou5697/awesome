@@ -4,7 +4,8 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
-local theme_path = gfs.get_configuration_dir .. "theme/"
+-- local config_path = tostring(gfs.get_configuration_dir)
+local config_path = gfs.get_configuration_dir()
 
 local theme = {}
 --local wibar = require("wibar")
@@ -81,11 +82,11 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- menu_[border_color|border_width]
 
 -- TODO correct the path
-theme.menu_submenu_icon = theme_path.."submenu.png"
+theme.menu_submenu_icon = config_path .. "theme/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
-theme.wallpaper   = theme_path.."wallpaper.jpg"
+theme.wallpaper   = config_path .. "theme/wallpaper.jpg"
 theme.background  = theme.nord0
 
 -- Generate Awesome icon:
