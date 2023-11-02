@@ -80,8 +80,6 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-
--- TODO correct the path
 theme.menu_submenu_icon = config_path .. "theme/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
@@ -120,6 +118,22 @@ theme.taglist_fg_empty = theme.nord9
 theme.taglist_bg_urgent = theme.bg_normal
 theme.taglist_fg_urgent = theme.nord11
 
+theme.layout_fairh = config_path.."theme/wibar/layouts/fairhw.png"
+theme.layout_fairv = config_path.."theme/wibar/layouts/fairvw.png"
+theme.layout_floating  = config_path.."theme/wibar/layouts/floatingw.png"
+theme.layout_magnifier = config_path.."theme/wibar/layouts/magnifierw.png"
+theme.layout_max = config_path.."theme/wibar/layouts/maxw.png"
+theme.layout_fullscreen = config_path.."theme/wibar/layouts/fullscreenw.png"
+theme.layout_tilebottom = config_path.."theme/wibar/layouts/tilebottomw.png"
+theme.layout_tileleft   = config_path.."theme/wibar/layouts/tileleftw.png"
+theme.layout_tile = config_path.."theme/wibar/layouts/tilew.png"
+theme.layout_tiletop = config_path.."theme/wibar/layouts/tiletopw.png"
+theme.layout_spiral  = config_path.."theme/wibar/layouts/spiralw.png"
+theme.layout_dwindle = config_path.."theme/wibar/layouts/dwindlew.png"
+theme.layout_cornernw = config_path.."theme/wibar/layouts/cornernww.png"
+theme.layout_cornerne = config_path.."theme/wibar/layouts/cornernew.png"
+theme.layout_cornersw = config_path.."theme/wibar/layouts/cornersww.png"
+theme.layout_cornerse = config_path.."theme/wibar/layouts/cornersew.png"
 return theme
 
 
