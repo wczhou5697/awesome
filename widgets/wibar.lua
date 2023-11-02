@@ -1,5 +1,6 @@
 local _M = {}
 
+-- TODO add power icon 
 local awful = require'awful'
 local hotkeys_popup = require'awful.hotkeys_popup'
 local beautiful = require'beautiful'
@@ -27,10 +28,6 @@ _M.launcher = awful.widget.launcher{
    image = beautiful.awesome_icon,
    menu = _M.mainmenu
 }
-
-_M.keyboardlayout = awful.widget.keyboardlayout()
-_M.textclock      = wibox.widget.textclock("%H:%M | %d/%m")
-
 
 function _M.create_promptbox() return awful.widget.prompt() end
 
@@ -120,6 +117,7 @@ function _M.create_wibox(s)
    return awful.wibar{
       screen = s,
       position = 'top',
+      height = 35,
       widget = {
          layout = wibox.layout.align.horizontal,
          expand = "outside",
@@ -127,7 +125,13 @@ function _M.create_wibox(s)
          {
             layout = wibox.layout.fixed.horizontal,
             spacing = 5,
-            s.layoutbox,
+            {
+               s.layoutbox,
+               top = 5,
+               bottom = 5,
+               left = 10,
+               widget = wibox.container.margin,
+            },
             s.tasklist,
          },
          -- middle widgets
@@ -138,9 +142,36 @@ function _M.create_wibox(s)
          },
          -- right widgets
          {
-            widget = wibox.container.place,
-            halign = "right",
-            _M.textclock,
+            {
+               widget = wibox.container.place,
+               halign = "right",
+               {
+                  layout = wibox.layout.fixed.horizontal,
+                  spacing = 5,
+                  {
+                     text = "",
+                     font = "Material Symbols Rounded",
+                     widget = wibox.widget.textbox,
+                  },
+                  {
+                     format = "%a %d/%m",
+                     font   = "JetBrains Mono",
+                     widget = wibox.widget.textclock,
+                  },
+                  {
+                     text = "",
+                     font = "Material Symbols Rounded",
+                     widget = wibox.widget.textbox,
+                  },
+                  {
+                     format = "%H:%M",
+                     font   = "JetBrains Mono",
+                     widget = wibox.widget.textclock,
+                  },
+               }
+            },
+            widget = wibox.container.margin,
+            right =  10,
          }
       }
    }

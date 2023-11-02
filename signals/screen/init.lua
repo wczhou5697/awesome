@@ -8,17 +8,19 @@ local wibar = require'widgets.wibar'
 screen.connect_signal('request::wallpaper', function(s)
    awful.wallpaper{
       screen = s,
+      bg = "#242933",
       widget = {
          {
-            image     = beautiful.wallpaper,
+            image     = beautiful.arch_icon,
             upscale   = true,
             downscale = true,
+            forced_width = 500,
+            forced_height = 500,
             widget    = wibox.widget.imagebox,
          },
          valign = 'center',
          halign = 'center',
-         tiled = false,
-         widget = wibox.container.tile,
+         widget = wibox.container.place,
       }
 
    }

@@ -84,7 +84,8 @@ theme.menu_submenu_icon = config_path .. "theme/submenu.png"
 theme.menu_height = dpi(15)
 theme.menu_width  = dpi(100)
 
-theme.wallpaper   = config_path .. "theme/wallpaper.jpg"
+theme.wallpaper   = config_path .. "theme/wallpaper/wallpaper.png"
+theme.arch_icon   = config_path .. "theme/wallpaper/arch-icon.svg"
 theme.background  = theme.nord0
 
 -- Generate Awesome icon:
